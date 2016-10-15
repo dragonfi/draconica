@@ -1,42 +1,84 @@
 module Main exposing (main)
 
-import Html exposing (text, table, td, tr, th)
+import Html exposing (text, table, td, tr, th, input, div)
 import Html.App as App
+import Html.Attributes exposing (placeholder)
+import Html.Events exposing (onInput)
+import String exposing (toLower, contains)
+import Platform.Cmd
 import HtmlStyle exposing (withStyle)
 import Monster exposing (Monster, viewMonster, monsterTableHeader)
 
 
 type alias Model =
-    { monsters : List Monster }
+    { allMonsters : List Monster, selectedMonsters : List Monster }
 
 
 type Msg
-    = None
+    = NewFilter String
 
 
 initialModel : Model
 initialModel =
-    Model
-        <| [ Monster "Walking Egg" 1 [ "All" ] "Egg" ""
-           , Monster "Demon Boar" 5 [ "Woodland", "DarkForest" ] "Beast" ""
-           ]
+    let
+        monsters =
+            [ Monster "Walking Egg" 1 [ "All" ] "Egg" ""
+            , Monster "Demon Boar" 5 [ "Woodland", "DarkForest" ] "Beast" ""
+            ]
+    in
+        Model monsters monsters
 
 
-viewModel : Model -> Html.Html a
+viewModel : Model -> Html.Html Msg
 viewModel model =
-    table [] <| monsterTableHeader :: List.map viewMonster model.monsters
+    div []
+        [ input [ placeholder "search string", onInput NewFilter ] []
+        , table [] <| monsterTableHeader :: List.map viewMonster model.selectedMonsters
+        ]
+
+
+update : Msg -> Model -> ( Model, Cmd a )
+update msg model =
+    case msg of
+        NewFilter substring ->
+            ( { model
+                | selectedMonsters = List.filter (monsterHasSubstring substring) model.allMonsters
+              }
+            , Cmd.none
+            )
+
+
+monsterHasSubstring : String -> Monster -> Bool
+monsterHasSubstring substring monster =
+    let
+        part =
+            toLower substring
+
+        monsterAsString =
+            monster |> toString |> toLower
+    in
+        contains part monsterAsString
 
 
 indexPageStyle : String
 indexPageStyle =
     """
-    table, td, th {
-        border-width: 1px;
+    body {
+        margin: 1em;
         color: #586e75;
-        border-color: #93a1a1;
-        background-color: #fdf6e3;
-        border-style: solid;
+    }
+    table, td, th {
+        border: solid 1px #93a1a1;
         border-collapse: collapse;
+        background-color: #fdf6e3;
+    }
+
+    input {
+        display: block;
+        margin-bottom: 0.5em;
+        border: solid 1px #93a1a1;
+        border-radius: 0.2em;
+        background-color: #fdf6e3;
     }
 
     //table tr:nth-child(even) td {
@@ -51,6 +93,6 @@ main =
     App.program
         { init = ( initialModel, Cmd.none )
         , subscriptions = \model -> Sub.none
-        , update = \message -> \model -> ( initialModel, Cmd.none )
+        , update = update
         , view = viewModel |> withStyle indexPageStyle
         }
