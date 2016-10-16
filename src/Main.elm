@@ -8,6 +8,7 @@ import String exposing (toLower, contains)
 import Platform.Cmd
 import HtmlStyle exposing (withStyle)
 import Monster exposing (Monster, viewMonster, monsterTableHeader)
+import Monsters exposing (allMonsters)
 
 
 type alias Model =
@@ -22,9 +23,7 @@ initialModel : Model
 initialModel =
     let
         monsters =
-            [ Monster "Walking Egg" 1 [ "All" ] "Egg" ""
-            , Monster "Demon Boar" 5 [ "Woodland", "DarkForest" ] "Beast" ""
-            ]
+            allMonsters
     in
         Model monsters monsters
 
@@ -40,16 +39,20 @@ viewModel model =
 update : Msg -> Model -> ( Model, Cmd a )
 update msg model =
     case msg of
-        NewFilter substring ->
+        NewFilter query ->
             ( { model
-                | selectedMonsters = List.filter (monsterHasSubstring substring) model.allMonsters
+                | selectedMonsters = List.filter (monsterMatches query) model.allMonsters
               }
             , Cmd.none
             )
 
 
-monsterHasSubstring : String -> Monster -> Bool
-monsterHasSubstring substring monster =
+
+-- TODO: match by words separated by space (and) or pipe (or)
+
+
+monsterMatches : String -> Monster -> Bool
+monsterMatches substring monster =
     let
         part =
             toLower substring

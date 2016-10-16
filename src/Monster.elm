@@ -4,11 +4,53 @@ import Html exposing (td, th, tr, text)
 import String
 
 
+type Terrain
+    = All
+    | Forest
+    | Grassland
+    | Highlands
+    | Desert
+    | Mountain
+    | Wasteland
+    | Woods
+    | Rocky
+    | Swamp
+    | Pond
+    | Jungle
+    | River
+    | Sea
+    | Alpine
+    | AllHighLevelTerrain
+    | LowAlpines
+
+
+type Season
+    = Spring
+    | Summer
+    | Fall
+    | Winter
+    | NoSeason
+
+
+type MonsterType
+    = Egg
+    | Beast
+    | Plant
+    | Nekogoblin
+    | Demonstone
+    | Undead
+    | Gobroach
+    | Demon
+    | Magical
+    | WildDragon
+
+
 type alias Monster =
     { name : String
     , level : Int
-    , terrains : List String
-    , monsterType : String
+    , habitat : List Terrain
+    , season : Season
+    , monsterType : MonsterType
     , notes : String
     }
 
@@ -17,10 +59,10 @@ viewMonster : Monster -> Html.Html a
 viewMonster monster =
     tr []
         [ td [] [ monster.name |> text ]
-        , td [] [ String.join ", " monster.terrains |> text ]
+        , td [] [ text <| String.join ", " <| List.map toString monster.habitat ]
         ]
 
 
 monsterTableHeader : Html.Html a
 monsterTableHeader =
-    tr [] [ th [] [ text "Name" ], th [] [ text "Terrains" ] ]
+    tr [] [ th [] [ text "Name" ], th [] [ text "Habitat" ] ]
