@@ -58,11 +58,18 @@ type alias Monster =
 viewMonster : Monster -> Html.Html a
 viewMonster monster =
     tr []
-        [ td [] [ monster.name |> text ]
-        , td [] [ text <| String.join ", " <| List.map toString monster.habitat ]
+        [ td [] [ monster.level |> toString |> text ]
+        , td [] [ monster.name |> text ]
+        , td [] [ List.map toString monster.habitat |> String.join ", " |> text ]
+        , td [] [ monster.season |> toString |> text ]
         ]
 
 
 monsterTableHeader : Html.Html a
 monsterTableHeader =
-    tr [] [ th [] [ text "Name" ], th [] [ text "Habitat" ] ]
+    tr []
+        [ th [] [ text "Level" ]
+        , th [] [ text "Name" ]
+        , th [] [ text "Habitat" ]
+        , th [] [ text "Season" ]
+        ]
