@@ -5,15 +5,15 @@ import String
 
 
 type Terrain
-    = All
-    | Forest
+    = AllTerrain
+    | DarkForest
     | Grassland
     | Highlands
     | Desert
     | Mountain
     | Wasteland
     | Woods
-    | Rocky
+    | RockyTerrain
     | Swamp
     | Pond
     | Jungle
@@ -34,8 +34,8 @@ type Season
 
 type MonsterType
     = Egg
-    | Beast
-    | Plant
+    | PhantomBeast
+    | PhantomPlant
     | Nekogoblin
     | Demonstone
     | Undead
