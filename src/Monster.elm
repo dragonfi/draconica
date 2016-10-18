@@ -61,6 +61,7 @@ viewMonster monster =
         , td [] [ monster.name |> text ]
         , td [] [ List.map toString monster.habitat |> String.join ", " |> text ]
         , td [] [ monster.season |> toString |> text ]
+        , td [] [ monster.monsterType |> toString |> text ]
         ]
 
 
@@ -71,4 +72,5 @@ monsterTableHeader =
         , th [] [ text "Name" ]
         , th [] [ text "Habitat" ]
         , th [] [ text "Season" ]
+        , th [] [ text "Type" ]
         ]
