@@ -77,7 +77,7 @@ indexPageStyle : String
 indexPageStyle =
     """
     body {
-        margin: 1em;
+        margin: 0.5em;
         color: #586e75;
     }
     table, td, th {
