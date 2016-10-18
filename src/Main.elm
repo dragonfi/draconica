@@ -47,12 +47,22 @@ update msg model =
             )
 
 
-
--- TODO: match by words separated by space (and) or pipe (or)
-
-
 monsterMatches : String -> Monster -> Bool
-monsterMatches substring monster =
+monsterMatches query monster =
+    let
+        orOperator =
+            ","
+    in
+        List.any (allWordsFoundIn monster) <| String.split orOperator query
+
+
+allWordsFoundIn : Monster -> String -> Bool
+allWordsFoundIn monster wordsSeparatedByWhitespace =
+    List.all (substringFoundIn monster) <| String.words wordsSeparatedByWhitespace
+
+
+substringFoundIn : Monster -> String -> Bool
+substringFoundIn monster substring =
     let
         part =
             toLower substring
