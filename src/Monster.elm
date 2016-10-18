@@ -51,7 +51,6 @@ type alias Monster =
     , habitat : List Terrain
     , season : Season
     , monsterType : MonsterType
-    , notes : String
     }
 
 
