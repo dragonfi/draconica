@@ -23,7 +23,7 @@ initialModel : Model
 initialModel =
     let
         monsters =
-            allMonsters
+            List.sortBy .level allMonsters
     in
         Model monsters monsters
 
