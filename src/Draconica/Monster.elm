@@ -1,4 +1,4 @@
-module Monster exposing (..)
+module Draconica.Monster exposing (..)
 
 import Html exposing (td, th, tr, text)
 import String

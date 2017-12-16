@@ -1,4 +1,4 @@
-module HtmlStyle exposing (withStyle)
+module HtmlStyle.HtmlStyle exposing (withStyle)
 
 import Html exposing (div, node, text)
 import Html.Attributes exposing (name, content)

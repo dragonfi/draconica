@@ -1,6 +1,6 @@
-module Monsters exposing (allMonsters)
+module Draconica.Monsters exposing (allMonsters)
 
-import Monster exposing (Monster, Season(..), Terrain(..), MonsterType(..))
+import Draconica.Monster exposing (Monster, Season(..), Terrain(..), MonsterType(..))
 
 
 allMonsters : List Monster

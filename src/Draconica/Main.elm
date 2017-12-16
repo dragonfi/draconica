@@ -1,14 +1,12 @@
-module Main exposing (main)
+module Draconica.Main exposing (init, view, update, subscriptions, Model, Msg)
 
 import Html exposing (text, table, td, tr, th, input, div)
-import Html.App as App
 import Html.Attributes exposing (placeholder)
 import Html.Events exposing (onInput)
 import String exposing (toLower, contains)
 import Platform.Cmd
-import HtmlStyle exposing (withStyle)
-import Monster exposing (Monster, viewMonster, monsterTableHeader)
-import Monsters exposing (allMonsters)
+import Draconica.Monster exposing (Monster, viewMonster, monsterTableHeader)
+import Draconica.Monsters exposing (allMonsters)
 
 
 type alias Model =
@@ -19,8 +17,8 @@ type Msg
     = NewFilter String
 
 
-initialModel : Model
-initialModel =
+init : Model
+init =
     let
         monsters =
             List.sortBy .level allMonsters
@@ -28,8 +26,8 @@ initialModel =
         Model monsters monsters
 
 
-viewModel : Model -> Html.Html Msg
-viewModel model =
+view : Model -> Html.Html Msg
+view model =
     div []
         [ input [ placeholder "search string", onInput NewFilter ] []
         , table [] <| monsterTableHeader :: List.map viewMonster model.selectedMonsters
@@ -45,6 +43,11 @@ update msg model =
               }
             , Cmd.none
             )
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
 
 
 monsterMatches : String -> Monster -> Bool
@@ -71,41 +74,3 @@ substringFoundIn monster substring =
             monster |> toString |> toLower
     in
         contains part monsterAsString
-
-
-indexPageStyle : String
-indexPageStyle =
-    """
-    body {
-        margin: 0.5em;
-        color: #586e75;
-    }
-    table, td, th {
-        border: solid 1px #93a1a1;
-        border-collapse: collapse;
-        background-color: #fdf6e3;
-    }
-
-    input {
-        display: block;
-        margin-bottom: 0.5em;
-        border: solid 1px #93a1a1;
-        border-radius: 0.2em;
-        background-color: #fdf6e3;
-    }
-
-    //table tr:nth-child(even) td {
-    //    background-color: #eee8d5;
-    //    }
-    }
-    """
-
-
-main : Program Never
-main =
-    App.program
-        { init = ( initialModel, Cmd.none )
-        , subscriptions = \model -> Sub.none
-        , update = update
-        , view = viewModel |> withStyle indexPageStyle
-        }
