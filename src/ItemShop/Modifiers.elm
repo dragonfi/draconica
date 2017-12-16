@@ -22,10 +22,10 @@ normalModifiers =
 
 magicalModifiers : List Modifier
 magicalModifiers =
-    [ Modifier "Walking" 0.0 5000
-    , Modifier "Shining" 0.0 1200
-    , Modifier "Speaking" 0.0 2000
-    , Modifier "PlusOne" 0.0 8000
+    [ Modifier "Walking" 1.0 5000
+    , Modifier "Shining" 1.0 1200
+    , Modifier "Speaking" 1.0 2000
+    , Modifier "PlusOne" 1.0 8000
     ]
 
 
