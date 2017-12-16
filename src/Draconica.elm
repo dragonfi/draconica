@@ -1,9 +1,8 @@
 module Main exposing (main)
 
 import Html exposing (Html)
-import HtmlStyle.HtmlStyle exposing (withStyle)
+import HtmlStyle.HtmlStyle exposing (withStyle, defaultStyle)
 import Draconica.Main exposing (init, view, update, subscriptions, Model, Msg)
-import Draconica.Style exposing (defaultStyle)
 
 
 main : Program Never Model Msg

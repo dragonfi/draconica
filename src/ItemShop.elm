@@ -1,13 +1,8 @@
 module Main exposing (main)
 
 import Html exposing (Html)
-import HtmlStyle.HtmlStyle exposing (withStyle)
+import HtmlStyle.HtmlStyle exposing (withStyle, defaultStyle)
 import ItemShop.Main exposing (init, view, update, subscriptions, Model, Msg)
-
-
-defaultStyle : String
-defaultStyle =
-    ""
 
 
 main : Program Never Model Msg
