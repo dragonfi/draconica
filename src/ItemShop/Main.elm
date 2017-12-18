@@ -1,4 +1,4 @@
-module ItemShop.Main exposing (init, view, update, subscriptions, Model, Msg)
+module ItemShop.Main exposing (init, view, update, subscriptions, Model, Msg, initCmd)
 
 import Html exposing (a, button, div, table, td, text, tr)
 import Html.Attributes exposing (class)
@@ -9,6 +9,7 @@ import ItemShop.Modifier exposing (Modifier, viewModifier)
 import ItemShop.Modifiers exposing (allModifiers)
 import ItemShop.RandomItem exposing (randomItem)
 import Random
+import Task
 
 
 type alias Model =
@@ -23,7 +24,12 @@ type Msg
 
 init : Model
 init =
-    Model <| List.map (addModifiers allModifiers) baseItems
+    Model []
+
+
+initCmd : Cmd Msg
+initCmd =
+    Cmd.batch <| List.repeat 10 <| Random.generate NewItem randomItem
 
 
 view : Model -> Html.Html Msg
