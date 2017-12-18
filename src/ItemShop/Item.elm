@@ -7,6 +7,7 @@ module ItemShop.Item
         , addModifiers
         , actualPrice
         , itemTableHeader
+        , nothing
         )
 
 import Html exposing (a, td, text, tr, th)
@@ -15,7 +16,8 @@ import ItemShop.Modifier exposing (Modifier, modifiedPrice, viewModifier)
 
 
 type Category
-    = SpecialtyGood
+    = Other
+    | SpecialtyGood
     | Weapon
     | Armor
     | Shield
@@ -77,3 +79,8 @@ itemTableHeader =
         , th [] [ text "Category" ]
         , th [] [ text "Modifiers" ]
         ]
+
+
+nothing : Item
+nothing =
+    Item "Nothing" Other 0 []
