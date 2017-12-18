@@ -1,4 +1,4 @@
-module ItemShop.Modifier exposing (Modifier, viewModifier, modifiedPrice)
+module ItemShop.Modifier exposing (Modifier, viewModifier, modifiedPrice, regular)
 
 import Html exposing (td, text, tr, span)
 import Html.Attributes exposing (class)
@@ -9,6 +9,11 @@ type alias Modifier =
     , multiplier : Float
     , addend : Int
     }
+
+
+regular : Modifier
+regular =
+    Modifier "Regular" 1.0 0
 
 
 viewModifier : Modifier -> Html.Html a
