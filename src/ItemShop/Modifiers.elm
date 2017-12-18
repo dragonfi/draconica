@@ -8,7 +8,7 @@ normalModifiers =
     [ Modifier "Cute" 2.0 0
     , Modifier "Beautiful" 2.0 0
     , Modifier "Sturdy" 3.0 0
-    , Modifier "HighQuality" 5.0 0
+    , Modifier "High Quality" 5.0 0
     , Modifier "Used" 0.8 0
     , Modifier "Gross" 0.8 0
     , Modifier "Uncool" 0.8 0
@@ -25,7 +25,7 @@ magicalModifiers =
     [ Modifier "Walking" 1.0 5000
     , Modifier "Shining" 1.0 1200
     , Modifier "Speaking" 1.0 2000
-    , Modifier "PlusOne" 1.0 8000
+    , Modifier "Plus One" 1.0 8000
     ]
 
 
