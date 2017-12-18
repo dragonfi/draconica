@@ -1,7 +1,7 @@
 module Draconica.Monster exposing (..)
 
-import Html exposing (td, th, tr, text)
-import String
+import Html exposing (td, text, th, tr)
+import Html.Attributes exposing (class)
 
 
 type Terrain
@@ -56,7 +56,7 @@ type alias Monster =
 
 viewMonster : Monster -> Html.Html a
 viewMonster monster =
-    tr []
+    tr [ class "draconica-monster" ]
         [ td [] [ monster.level |> toString |> text ]
         , td [] [ monster.name |> text ]
         , td [] [ List.map toString monster.habitat |> String.join ", " |> text ]
@@ -67,7 +67,7 @@ viewMonster monster =
 
 monsterTableHeader : Html.Html a
 monsterTableHeader =
-    tr []
+    tr [ class "draconica-monsterheader" ]
         [ th [] [ text "Level" ]
         , th [] [ text "Name" ]
         , th [] [ text "Habitat" ]

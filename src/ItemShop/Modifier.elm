@@ -1,6 +1,7 @@
 module ItemShop.Modifier exposing (Modifier, viewModifier, modifiedPrice)
 
-import Html exposing (tr, td, text)
+import Html exposing (td, text, tr, span)
+import Html.Attributes exposing (class)
 
 
 type alias Modifier =
@@ -12,11 +13,9 @@ type alias Modifier =
 
 viewModifier : Modifier -> Html.Html a
 viewModifier modifier =
-    tr []
-        [ td [] [ modifier.characteristic |> toString |> text ]
-        , td [] [ text "x", modifier.multiplier |> toString |> text ]
-        , td [] [ text "+", modifier.addend |> toString |> text ]
-        ]
+    span
+        [ class "itemshop-modifier" ]
+        [ modifier.characteristic |> text ]
 
 
 allMultipliers : List Modifier -> Float
@@ -29,7 +28,7 @@ allMultipliers modifiers =
 allAddends : List Modifier -> Int
 allAddends modifiers =
     modifiers
-        |> List.map (\m -> m.addend)
+        |> List.map .addend
         |> List.sum
 
 

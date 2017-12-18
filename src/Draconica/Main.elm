@@ -1,7 +1,7 @@
 module Draconica.Main exposing (init, view, update, subscriptions, Model, Msg)
 
 import Html exposing (text, table, td, tr, th, input, div)
-import Html.Attributes exposing (placeholder)
+import Html.Attributes exposing (placeholder, class)
 import Html.Events exposing (onInput)
 import String exposing (toLower, contains)
 import Platform.Cmd
@@ -28,9 +28,11 @@ init =
 
 view : Model -> Html.Html Msg
 view model =
-    div []
+    div [ class "draconica" ]
         [ input [ placeholder "search string", onInput NewFilter ] []
-        , table [] <| monsterTableHeader :: List.map viewMonster model.selectedMonsters
+        , table [ class "draconica-monsters" ] <|
+            monsterTableHeader
+                :: List.map viewMonster model.selectedMonsters
         ]
 
 
