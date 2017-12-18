@@ -1,6 +1,6 @@
 module ItemShop.Main exposing (init, view, update, subscriptions, Model, Msg)
 
-import Html exposing (a, div, table, td, text, tr, button)
+import Html exposing (a, button, div, table, td, text, tr)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import ItemShop.Item exposing (Item, addModifiers, itemTableHeader, viewItem)
