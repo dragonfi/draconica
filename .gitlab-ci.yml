@@ -4,7 +4,7 @@ pages:
   script:
   # - sass input.scss target/output.css
   # - hugo --baseUrl="https://dragonfi.gitlab.io/draconica/"
-  - make.sh
+  - ./make.sh
   artifacts:
     paths:
     - target
