@@ -2,7 +2,6 @@
 
 set -x
 
-rm -r target
 mkdir -p target
 
 elm make --yes --output target/draconica.html src/Draconica.elm
