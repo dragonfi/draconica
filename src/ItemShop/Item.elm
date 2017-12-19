@@ -62,6 +62,28 @@ viewItem item =
             List.map .characteristic item.modifiers
     in
         tr [ class "itemshop-item" ]
+            [ td [] [ item |> actualPrice |> toString |> text ]
+            , td [] [ String.join " " modifierNames |> text ]
+            , td [] [ item.name |> text ]
+            ]
+
+
+itemTableHeader : Html.Html a
+itemTableHeader =
+    tr [ class "itemshop-item-header" ]
+        [ th [] [ text "Price" ]
+        , th [] [ text "Modifiers" ]
+        , th [] [ text "Name" ]
+        ]
+
+
+debugViewItem : Item -> Html.Html a
+debugViewItem item =
+    let
+        modifierNames =
+            List.map .characteristic item.modifiers
+    in
+        tr [ class "itemshop-item" ]
             [ td [] [ item.basePrice |> toString |> text ]
             , td [] [ item |> actualPrice |> toString |> text ]
             , td [] [ item.name |> text ]
@@ -70,8 +92,8 @@ viewItem item =
             ]
 
 
-itemTableHeader : Html.Html a
-itemTableHeader =
+debugItemTableHeader : Html.Html a
+debugItemTableHeader =
     tr [ class "itemshop-item-header" ]
         [ th [] [ text "Base Price" ]
         , th [] [ text "Price" ]
