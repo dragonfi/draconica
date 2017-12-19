@@ -2,4 +2,4 @@
 
 set -x
 
-gitlab-ci-multi-runner exec docker pages
+gitlab-runner exec docker pages
