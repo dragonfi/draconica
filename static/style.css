@@ -6,6 +6,7 @@ table, td, th {
     border: solid 1px #93a1a1;
     border-collapse: collapse;
     background-color: #fdf6e3;
+    clear: both;
 }
 
 a {
@@ -19,6 +20,15 @@ input {
     border: solid 1px #93a1a1;
     border-radius: 0.2em;
     background-color: #fdf6e3;
+    float: left;
+}
+
+.search-example {
+  display: block;
+  float: left;
+  font-family: monospace;
+  padding: 0.2em;
+  margin-left: 0.5em;
 }
 
 //table tr:nth-child(even) td {

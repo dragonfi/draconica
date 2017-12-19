@@ -1,7 +1,6 @@
 module Main exposing (main)
 
 import Html exposing (Html)
-import HtmlStyle.HtmlStyle exposing (withStyle, defaultStyle)
 import Draconica.Main exposing (init, view, update, subscriptions, Model, Msg)
 
 
@@ -11,5 +10,5 @@ main =
         { init = ( init, Cmd.none )
         , subscriptions = subscriptions
         , update = update
-        , view = view |> withStyle defaultStyle
+        , view = view
         }

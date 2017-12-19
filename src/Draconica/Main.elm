@@ -1,12 +1,12 @@
 module Draconica.Main exposing (init, view, update, subscriptions, Model, Msg)
 
-import Html exposing (text, table, td, tr, th, input, div)
-import Html.Attributes exposing (placeholder, class)
-import Html.Events exposing (onInput)
-import String exposing (toLower, contains)
-import Platform.Cmd
-import Draconica.Monster exposing (Monster, viewMonster, monsterTableHeader)
+import Draconica.Monster exposing (Monster, monsterTableHeader, viewMonster)
 import Draconica.Monsters exposing (allMonsters)
+import Html exposing (aside, div, input, span, table, td, text, th, tr)
+import Html.Attributes exposing (class, placeholder)
+import Html.Events exposing (onInput)
+import Platform.Cmd
+import String exposing (contains, toLower)
 
 
 type alias Model =
@@ -30,6 +30,7 @@ view : Model -> Html.Html Msg
 view model =
     div [ class "draconica" ]
         [ input [ placeholder "search string", onInput NewFilter ] []
+        , aside [ class "search-example" ] [ text "Example: Fall Egg, 6 Undead" ]
         , table [ class "draconica-monsters" ] <|
             monsterTableHeader
                 :: List.map viewMonster model.selectedMonsters
