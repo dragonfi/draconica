@@ -3,7 +3,7 @@ body {
     color: #586e75;
 }
 
-table, button, h2 {
+table, button, h2, input, .search-example {
   margin: 0.5em;
 }
 
