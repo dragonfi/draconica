@@ -43,6 +43,7 @@ type Msg
     | GenerateNewItem Int
     | SortByPrice
     | SwitchCategory String
+    | ClearItems
 
 
 init : Model
@@ -113,6 +114,7 @@ view model =
             [ text "New item" ]
         , button [ onClick (GenerateNewItem 5) ] [ text "+5 item" ]
         , button [ onClick (SortByPrice) ] [ text "Sort" ]
+        , button [ onClick (ClearItems) ] [ text "Clear Items" ]
         , table [ class "itemshop" ] <|
             itemTableHeader
                 :: List.map viewItem model.items
@@ -145,6 +147,9 @@ update msg model =
 
         SwitchCategory category ->
             ( { model | broadCategories = switchCategory category model.broadCategories }, Cmd.none )
+
+        ClearItems ->
+            ( { model | items = [] }, Cmd.none )
 
 
 subscriptions : Model -> Sub Msg
