@@ -48,8 +48,11 @@ randomConst a =
 randomModifiers : Generator (List Modifier)
 randomModifiers =
     let
+        expectedNumberOfModifiers =
+            2.0
+
         probability =
-            1.0 / (toFloat <| List.length <| allModifiers)
+            expectedNumberOfModifiers / (toFloat <| List.length <| allModifiers)
 
         generators : List (Generator (List Modifier))
         generators =
