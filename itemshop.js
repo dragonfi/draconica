@@ -9244,7 +9244,7 @@ var _user$project$ItemShop_Item$viewItem = function (item) {
 					{
 						ctor: '::',
 						_0: _elm_lang$html$Html$text(
-							A2(_elm_lang$core$String$join, ' ', modifierNames)),
+							A2(_elm_lang$core$String$join, ', ', modifierNames)),
 						_1: {ctor: '[]'}
 					}),
 				_1: {
@@ -9382,7 +9382,11 @@ var _user$project$ItemShop_Item$nothing = A4(
 
 var _user$project$ItemShop_Items$itemOfCategory = _elm_lang$core$Basics$flip(_user$project$ItemShop_Item$baseItem);
 var _user$project$ItemShop_Items$shoe = _user$project$ItemShop_Items$itemOfCategory(_user$project$ItemShop_Item$Shoe);
-var _user$project$ItemShop_Items$shoes = {
+var _user$project$ItemShop_Items$cape = _user$project$ItemShop_Items$itemOfCategory(_user$project$ItemShop_Item$Cape);
+var _user$project$ItemShop_Items$staff = _user$project$ItemShop_Items$itemOfCategory(_user$project$ItemShop_Item$Staff);
+var _user$project$ItemShop_Items$hat = _user$project$ItemShop_Items$itemOfCategory(_user$project$ItemShop_Item$Hat);
+var _user$project$ItemShop_Items$accessory = _user$project$ItemShop_Items$itemOfCategory(_user$project$ItemShop_Item$Accessory);
+var _user$project$ItemShop_Items$travelGear = {
 	ctor: '::',
 	_0: A2(_user$project$ItemShop_Items$shoe, 'Rain boots', 300),
 	_1: {
@@ -9400,98 +9404,74 @@ var _user$project$ItemShop_Items$shoes = {
 					_1: {
 						ctor: '::',
 						_0: A2(_user$project$ItemShop_Items$shoe, 'Jungle boots', 600),
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$ItemShop_Items$cape, 'Windbreaker', 120),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$ItemShop_Items$cape, 'Warm cape', 160),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$ItemShop_Items$cape, 'Raincoat', 400),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$ItemShop_Items$cape, 'Camo cape', 400),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$ItemShop_Items$cape, 'Fire cape', 700),
+											_1: {
+												ctor: '::',
+												_0: A2(_user$project$ItemShop_Items$cape, 'Sun cape', 400),
+												_1: {
+													ctor: '::',
+													_0: A2(_user$project$ItemShop_Items$staff, 'Walking stick', 50),
+													_1: {
+														ctor: '::',
+														_0: A2(_user$project$ItemShop_Items$staff, 'Hiking staff', 100),
+														_1: {
+															ctor: '::',
+															_0: A2(_user$project$ItemShop_Items$staff, 'Snow staff', 280),
+															_1: {
+																ctor: '::',
+																_0: A2(_user$project$ItemShop_Items$hat, 'Cap', 120),
+																_1: {
+																	ctor: '::',
+																	_0: A2(_user$project$ItemShop_Items$hat, 'Sun hat', 180),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(_user$project$ItemShop_Items$hat, 'Woolen hat', 200),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(_user$project$ItemShop_Items$hat, 'Sand hood', 340),
+																			_1: {
+																				ctor: '::',
+																				_0: A2(_user$project$ItemShop_Items$accessory, 'Googles', 4000),
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			}
 		}
 	}
 };
-var _user$project$ItemShop_Items$cape = _user$project$ItemShop_Items$itemOfCategory(_user$project$ItemShop_Item$Cape);
-var _user$project$ItemShop_Items$capes = {
-	ctor: '::',
-	_0: A2(_user$project$ItemShop_Items$cape, 'Windbreaker', 120),
-	_1: {
-		ctor: '::',
-		_0: A2(_user$project$ItemShop_Items$cape, 'Warm cape', 160),
-		_1: {
-			ctor: '::',
-			_0: A2(_user$project$ItemShop_Items$cape, 'Raincoat', 400),
-			_1: {
-				ctor: '::',
-				_0: A2(_user$project$ItemShop_Items$cape, 'Camo cape', 400),
-				_1: {
-					ctor: '::',
-					_0: A2(_user$project$ItemShop_Items$cape, 'Fire cape', 700),
-					_1: {
-						ctor: '::',
-						_0: A2(_user$project$ItemShop_Items$cape, 'Sun cape', 400),
-						_1: {ctor: '[]'}
-					}
-				}
-			}
-		}
-	}
-};
-var _user$project$ItemShop_Items$staff = _user$project$ItemShop_Items$itemOfCategory(_user$project$ItemShop_Item$Staff);
-var _user$project$ItemShop_Items$staffs = {
-	ctor: '::',
-	_0: A2(_user$project$ItemShop_Items$staff, 'Walking stick', 50),
-	_1: {
-		ctor: '::',
-		_0: A2(_user$project$ItemShop_Items$staff, 'Hiking staff', 100),
-		_1: {
-			ctor: '::',
-			_0: A2(_user$project$ItemShop_Items$staff, 'Snow staff', 280),
-			_1: {ctor: '[]'}
-		}
-	}
-};
-var _user$project$ItemShop_Items$hat = _user$project$ItemShop_Items$itemOfCategory(_user$project$ItemShop_Item$Hat);
-var _user$project$ItemShop_Items$hats = {
-	ctor: '::',
-	_0: A2(_user$project$ItemShop_Items$hat, 'Cap', 120),
-	_1: {
-		ctor: '::',
-		_0: A2(_user$project$ItemShop_Items$hat, 'Sun hat', 180),
-		_1: {
-			ctor: '::',
-			_0: A2(_user$project$ItemShop_Items$hat, 'Woolen hat', 200),
-			_1: {
-				ctor: '::',
-				_0: A2(_user$project$ItemShop_Items$hat, 'Sand hood', 340),
-				_1: {ctor: '[]'}
-			}
-		}
-	}
-};
-var _user$project$ItemShop_Items$accessory = _user$project$ItemShop_Items$itemOfCategory(_user$project$ItemShop_Item$Accessory);
-var _user$project$ItemShop_Items$accessories = {
-	ctor: '::',
-	_0: A2(_user$project$ItemShop_Items$accessory, 'Googles', 4000),
-	_1: {ctor: '[]'}
-};
-var _user$project$ItemShop_Items$baseItems = _elm_lang$core$List$concat(
+var _user$project$ItemShop_Items$allItems = _elm_lang$core$List$concat(
 	{
 		ctor: '::',
-		_0: _user$project$ItemShop_Items$shoes,
-		_1: {
-			ctor: '::',
-			_0: _user$project$ItemShop_Items$capes,
-			_1: {
-				ctor: '::',
-				_0: _user$project$ItemShop_Items$staffs,
-				_1: {
-					ctor: '::',
-					_0: _user$project$ItemShop_Items$hats,
-					_1: {
-						ctor: '::',
-						_0: _user$project$ItemShop_Items$accessories,
-						_1: {ctor: '[]'}
-					}
-				}
-			}
-		}
+		_0: _user$project$ItemShop_Items$travelGear,
+		_1: {ctor: '[]'}
 	});
 
 var _user$project$ItemShop_Modifiers$magicalModifiers = {
@@ -9588,7 +9568,8 @@ var _user$project$ItemShop_RandomItem$randomModifiers = function () {
 		_elm_lang$core$Random$list,
 		0,
 		_user$project$ItemShop_RandomItem$randomConst(_user$project$ItemShop_Modifier$regular));
-	var probability = 1.0 / _elm_lang$core$Basics$toFloat(
+	var expectedNumberOfModifiers = 2.0;
+	var probability = expectedNumberOfModifiers / _elm_lang$core$Basics$toFloat(
 		_elm_lang$core$List$length(_user$project$ItemShop_Modifiers$allModifiers));
 	var generators = A2(
 		_elm_lang$core$List$map,
@@ -9618,7 +9599,7 @@ var _user$project$ItemShop_RandomItem$randomChoice = F2(
 var _user$project$ItemShop_RandomItem$randomBaseItem = A2(
 	_user$project$ItemShop_RandomItem$randomChoice,
 	_user$project$ItemShop_Item$nothing,
-	_elm_lang$core$Array$fromList(_user$project$ItemShop_Items$baseItems));
+	_elm_lang$core$Array$fromList(_user$project$ItemShop_Items$allItems));
 var _user$project$ItemShop_RandomItem$randomItem = A3(
 	_elm_lang$core$Random$map2,
 	F2(
@@ -9638,7 +9619,10 @@ var _user$project$ItemShop_Main$Model = function (a) {
 };
 var _user$project$ItemShop_Main$init = _user$project$ItemShop_Main$Model(
 	{ctor: '[]'});
-var _user$project$ItemShop_Main$GenerateNewItem = {ctor: 'GenerateNewItem'};
+var _user$project$ItemShop_Main$SortByPrice = {ctor: 'SortByPrice'};
+var _user$project$ItemShop_Main$GenerateNewItem = function (a) {
+	return {ctor: 'GenerateNewItem', _0: a};
+};
 var _user$project$ItemShop_Main$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -9649,7 +9633,8 @@ var _user$project$ItemShop_Main$view = function (model) {
 				_elm_lang$html$Html$button,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Events$onClick(_user$project$ItemShop_Main$GenerateNewItem),
+					_0: _elm_lang$html$Html_Events$onClick(
+						_user$project$ItemShop_Main$GenerateNewItem(1)),
 					_1: {ctor: '[]'}
 				},
 				{
@@ -9660,18 +9645,49 @@ var _user$project$ItemShop_Main$view = function (model) {
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$table,
+					_elm_lang$html$Html$button,
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('itemshop'),
+						_0: _elm_lang$html$Html_Events$onClick(
+							_user$project$ItemShop_Main$GenerateNewItem(5)),
 						_1: {ctor: '[]'}
 					},
 					{
 						ctor: '::',
-						_0: _user$project$ItemShop_Item$itemTableHeader,
-						_1: A2(_elm_lang$core$List$map, _user$project$ItemShop_Item$viewItem, model.items)
+						_0: _elm_lang$html$Html$text('+5 item'),
+						_1: {ctor: '[]'}
 					}),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_user$project$ItemShop_Main$SortByPrice),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('Sort'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$table,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('itemshop'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _user$project$ItemShop_Item$itemTableHeader,
+								_1: A2(_elm_lang$core$List$map, _user$project$ItemShop_Item$viewItem, model.items)
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
 			}
 		});
 };
@@ -9681,27 +9697,42 @@ var _user$project$ItemShop_Main$NewItem = function (a) {
 var _user$project$ItemShop_Main$initCmd = _elm_lang$core$Platform_Cmd$batch(
 	A2(
 		_elm_lang$core$List$repeat,
-		10,
+		20,
 		A2(_elm_lang$core$Random$generate, _user$project$ItemShop_Main$NewItem, _user$project$ItemShop_RandomItem$randomItem)));
 var _user$project$ItemShop_Main$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
-		if (_p0.ctor === 'GenerateNewItem') {
-			return {
-				ctor: '_Tuple2',
-				_0: model,
-				_1: A2(_elm_lang$core$Random$generate, _user$project$ItemShop_Main$NewItem, _user$project$ItemShop_RandomItem$randomItem)
-			};
-		} else {
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					model,
-					{
-						items: {ctor: '::', _0: _p0._0, _1: model.items}
-					}),
-				_1: _elm_lang$core$Platform_Cmd$none
-			};
+		switch (_p0.ctor) {
+			case 'GenerateNewItem':
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: _elm_lang$core$Platform_Cmd$batch(
+						A2(
+							_elm_lang$core$List$repeat,
+							_p0._0,
+							A2(_elm_lang$core$Random$generate, _user$project$ItemShop_Main$NewItem, _user$project$ItemShop_RandomItem$randomItem)))
+				};
+			case 'NewItem':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							items: {ctor: '::', _0: _p0._0, _1: model.items}
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			default:
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							items: A2(_elm_lang$core$List$sortBy, _user$project$ItemShop_Item$actualPrice, model.items)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
 		}
 	});
 
