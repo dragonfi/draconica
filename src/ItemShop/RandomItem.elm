@@ -1,11 +1,9 @@
-module ItemShop.RandomItem exposing (randomItem, randomModifiers)
+module ItemShop.RandomItem exposing (randomItem)
 
 import Array exposing (Array, fromList)
 import Html exposing (a)
 import ItemShop.Item exposing (Item, nothing)
-import ItemShop.Items exposing (allItems)
 import ItemShop.Modifier exposing (Modifier, regular)
-import ItemShop.Modifiers exposing (allModifiers)
 import Maybe exposing (withDefault)
 import Random exposing (Generator)
 
@@ -16,16 +14,16 @@ randomChoice defaultItem items =
         (Random.int 0 ((Array.length items) - 1))
 
 
-randomItem : Generator Item
-randomItem =
+randomItem : List Item -> List Modifier -> Generator Item
+randomItem items modifiers =
     Random.map2 (\item mods -> { item | modifiers = mods })
-        randomBaseItem
-        randomModifiers
+        (randomBaseItem items)
+        (randomModifiers modifiers)
 
 
-randomBaseItem : Generator Item
-randomBaseItem =
-    randomChoice nothing (fromList allItems)
+randomBaseItem : List Item -> Generator Item
+randomBaseItem items =
+    randomChoice nothing (fromList items)
 
 
 modifierOrEmpty : Float -> Modifier -> Generator (List Modifier)
@@ -45,18 +43,18 @@ randomConst a =
     Random.map (\b -> a) Random.bool
 
 
-randomModifiers : Generator (List Modifier)
-randomModifiers =
+randomModifiers : List Modifier -> Generator (List Modifier)
+randomModifiers modifiers =
     let
         expectedNumberOfModifiers =
             2.0
 
         probability =
-            expectedNumberOfModifiers / (toFloat <| List.length <| allModifiers)
+            expectedNumberOfModifiers / (toFloat <| List.length <| modifiers)
 
         generators : List (Generator (List Modifier))
         generators =
-            List.map (modifierOrEmpty probability) allModifiers
+            List.map (modifierOrEmpty probability) modifiers
 
         emptyList =
             Random.list 0 (randomConst regular)

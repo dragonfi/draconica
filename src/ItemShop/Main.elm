@@ -4,6 +4,7 @@ import Html exposing (a, button, div, table, td, text, tr)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import ItemShop.Item exposing (Item, actualPrice, addModifiers, itemTableHeader, viewItem)
+import ItemShop.Items exposing (allItems)
 import ItemShop.Modifier exposing (Modifier, viewModifier)
 import ItemShop.Modifiers exposing (allModifiers)
 import ItemShop.RandomItem exposing (randomItem)
@@ -29,7 +30,9 @@ init =
 
 initCmd : Cmd Msg
 initCmd =
-    Cmd.batch <| List.repeat 20 <| Random.generate NewItem randomItem
+    Random.generate NewItem (randomItem allItems allModifiers)
+        |> List.repeat 20
+        |> Cmd.batch
 
 
 view : Model -> Html.Html Msg
@@ -48,7 +51,11 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         GenerateNewItem numberOfItems ->
-            ( model, Cmd.batch <| List.repeat numberOfItems <| Random.generate NewItem randomItem )
+            ( model
+            , Random.generate NewItem (randomItem allItems allModifiers)
+                |> List.repeat numberOfItems
+                |> Cmd.batch
+            )
 
         NewItem item ->
             ( { model | items = item :: model.items }, Cmd.none )
