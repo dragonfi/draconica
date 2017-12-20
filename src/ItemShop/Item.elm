@@ -63,7 +63,7 @@ viewItem item =
     in
         tr [ class "itemshop-item" ]
             [ td [] [ item |> actualPrice |> toString |> text ]
-            , td [] [ String.join " " modifierNames |> text ]
+            , td [] [ String.join ", " modifierNames |> text ]
             , td [] [ item.name |> text ]
             ]
 
