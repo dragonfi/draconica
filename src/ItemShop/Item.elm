@@ -26,6 +26,7 @@ type Category
     | Staff
     | Hat
     | Accessory
+    | Ration
     | Sundry
     | CampingEquipment
     | SmallContainer
