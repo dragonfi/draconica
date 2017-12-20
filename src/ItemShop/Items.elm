@@ -1,4 +1,4 @@
-module ItemShop.Items exposing (baseItems)
+module ItemShop.Items exposing (allItems)
 
 import ItemShop.Item exposing (Category, Category(..), Item, baseItem)
 
@@ -33,50 +33,31 @@ accessory =
     itemOfCategory Accessory
 
 
-shoes : List Item
-shoes =
+travelGear : List Item
+travelGear =
     [ shoe "Rain boots" 300
     , shoe "Walking shoes" 350
     , shoe "Climbing shoes" 450
     , shoe "Snow boots" 500
     , shoe "Mud boots" 500
     , shoe "Jungle boots" 600
-    ]
-
-
-capes : List Item
-capes =
-    [ cape "Windbreaker" 120
+    , cape "Windbreaker" 120
     , cape "Warm cape" 160
     , cape "Raincoat" 400
     , cape "Camo cape" 400
     , cape "Fire cape" 700
     , cape "Sun cape" 400
-    ]
-
-
-staffs : List Item
-staffs =
-    [ staff "Walking stick" 50
+    , staff "Walking stick" 50
     , staff "Hiking staff" 100
     , staff "Snow staff" 280
-    ]
-
-
-hats : List Item
-hats =
-    [ hat "Cap" 120
+    , hat "Cap" 120
     , hat "Sun hat" 180
     , hat "Woolen hat" 200
     , hat "Sand hood" 340
+    , accessory "Googles" 4000
     ]
 
 
-accessories : List Item
-accessories =
-    [ accessory "Googles" 4000 ]
-
-
-baseItems : List Item
-baseItems =
-    List.concat [ shoes, capes, staffs, hats, accessories ]
+allItems : List Item
+allItems =
+    List.concat [ travelGear ]

@@ -3,7 +3,7 @@ module ItemShop.RandomItem exposing (randomItem, randomModifiers)
 import Array exposing (Array, fromList)
 import Html exposing (a)
 import ItemShop.Item exposing (Item, nothing)
-import ItemShop.Items exposing (baseItems)
+import ItemShop.Items exposing (allItems)
 import ItemShop.Modifier exposing (Modifier, regular)
 import ItemShop.Modifiers exposing (allModifiers)
 import Maybe exposing (withDefault)
@@ -25,7 +25,7 @@ randomItem =
 
 randomBaseItem : Generator Item
 randomBaseItem =
-    randomChoice nothing (fromList baseItems)
+    randomChoice nothing (fromList allItems)
 
 
 modifierOrEmpty : Float -> Modifier -> Generator (List Modifier)
