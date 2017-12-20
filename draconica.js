@@ -9966,11 +9966,15 @@ var _user$project$Draconica_Main$view = function (model) {
 				_elm_lang$html$Html$input,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$placeholder('search string'),
+					_0: _elm_lang$html$Html_Attributes$class('search-box'),
 					_1: {
 						ctor: '::',
-						_0: _elm_lang$html$Html_Events$onInput(_user$project$Draconica_Main$NewFilter),
-						_1: {ctor: '[]'}
+						_0: _elm_lang$html$Html_Attributes$placeholder('search string'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onInput(_user$project$Draconica_Main$NewFilter),
+							_1: {ctor: '[]'}
+						}
 					}
 				},
 				{ctor: '[]'}),
