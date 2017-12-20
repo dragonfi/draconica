@@ -1,7 +1,7 @@
-module ItemShop.Items exposing (allItems)
+module ItemShop.Items exposing (..)
 
 import ItemShop.Item exposing (Item)
-import ItemShop.ItemCategories
+import ItemShop.ItemConstructors
     exposing
         ( accessory
         , armor

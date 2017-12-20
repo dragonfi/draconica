@@ -1,4 +1,4 @@
-module ItemShop.ItemCategories exposing (..)
+module ItemShop.ItemConstructors exposing (..)
 
 import ItemShop.Item exposing (baseItem, Item, Category(..))
 
