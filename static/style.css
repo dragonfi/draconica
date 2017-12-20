@@ -21,7 +21,8 @@ a {
   font-style: bold;
   text-decoration-line: underline;
 }
-input {
+
+.search-box {
     display: block;
     margin-bottom: 0.5em;
     border: solid 1px #93a1a1;

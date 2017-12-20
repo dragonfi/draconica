@@ -29,7 +29,7 @@ init =
 view : Model -> Html.Html Msg
 view model =
     div [ class "draconica" ]
-        [ input [ placeholder "search string", onInput NewFilter ] []
+        [ input [ class "search-box", placeholder "search string", onInput NewFilter ] []
         , aside [ class "search-example" ] [ text "Example: Fall Egg, 6 Undead" ]
         , table [ class "draconica-monsters" ] <|
             monsterTableHeader
