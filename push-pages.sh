@@ -4,7 +4,7 @@ set -x
 
 MSG="$(git log -1 --pretty=%B)"
 
-cd target/
+cd public/
 git status
 
 read -p "Continue (y/n)?" CONT

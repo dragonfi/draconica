@@ -7,6 +7,6 @@ pages:
   - ./make.sh
   artifacts:
     paths:
-    - target
+    - public
   only:
   - master

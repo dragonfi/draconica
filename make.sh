@@ -2,9 +2,9 @@
 
 set -x
 
-mkdir -p target
+mkdir -p public
 
-elm make --yes --output target/draconica.js src/Draconica.elm
-elm make --yes --output target/itemshop.js src/ItemShop.elm
+elm make --yes --output public/draconica.js src/Draconica.elm
+elm make --yes --output public/itemshop.js src/ItemShop.elm
 
-cp static/* target/
+cp static/* public/
